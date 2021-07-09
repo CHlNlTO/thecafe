@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> The Cafe </title>
+
+	<link rel="shortcut icon" type="image/png" href="Photos/THE CAFE ICON.png">
+	<style>
+
+		body{
+			background-color: #F5F5F5;
+		}
+
+		.wrapper{
+			display: grid;
+			grid-template-columns: 1fr 4fr;
+			grid-auto-rows: minmax(120px, auto);
+			grid-gap: 1em;
+			align-items: stretch;
+			justify-items: stretch;
+		}
+			
+		.wrapper > div{
+
+			padding: 1em;
+		}
+		
+		.nested{
+			display: grid;
+			grid-gap: 1em;
+			justify-items: center;
+			align-items: center;
+		}
+
+		#logo1{
+			width: 50%;
+			margin-bottom: 2em;
+		}
+
+		.navbar{
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			justify-items: center;
+			align-items: center;
+		}
+
+		.navbar > div{
+			font-family: Orator Std;
+			font-size: 150%;
+		}
+
+		a{
+			text-decoration: none;
+			color: #000000;
+		}
+
+		a:hover{
+			color: #a56631;
+		}
+
+		#heading{
+			width: 100%;
+		}
+
+		.nested2{
+			animation-name: nested2;
+			animation-duration: 4s;
+			animation-delay: -2s;
+		}
+
+		@keyframes	nested2 {
+			30% {
+				opacity: 0%;
+			}
+
+			100% {
+				opacity: 100%;
+			}
+		}
+
+		.productcard{
+			margin: 0;
+			padding: 0;
+			display: flex;
+			justify-content: center;
+			align-content: center;
+			min-height: 100vh;
+		}
+
+		.container{
+			position: relative;
+		}
+
+		.container .card{
+			position: relative;
+			width: 320px;
+			height: 450px;
+			background: #ffe8d1;
+			border-radius: 20px;
+			overflow: hidden;
+		}
+
+		.container .card:before{
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0	;
+			width: 100%;
+			height:  100%;
+			background: #3a1711;
+			clip-path: circle(150px at 80% 20%);
+			transform: 0.5s ease-in-out;
+		}
+
+	</style>
+</head>
+
+
+<body>
+	<div class="wrapper">
+		<div class="nested">
+			<img id="logo1" src="Photos/THE CAFE LOGO PNG.png">
+		</div>
+
+		<div class="navbar">
+			<div>
+				<a href="index.html">HOME</a> 
+			</div>
+			<div>
+				<a href="brew.html">BREW</a>
+			</div>
+			<div>
+				<a href="baristas.html">BARISTAS</a>
+			</div>
+			<div class="ordernow">
+				<a href="ordernow.html">ORDER NOW</a>
+			</div>
+		</div>
+
+	</div>
+
+	<div class="wrapper2">
+		<div class="nested2">
+			<img id="heading" src="Photos/COFFEE HEAD IMAGE.jpg">
+		</div>
+	</div>
+		
+<div class="productcard">		
+	<div class="container">
+		<div class="card">
+			<div class="imgBx">
+				<img src="Photos/CUP OF COFFEE PNG 2.png">
+			</div>
+			<div class="contentBx">
+				<h2>COFFEE</h2>
+				<div class="size">
+					<h3>SIZE : </h3>
+					<span>S</span>
+					<span>M</span>
+					<span>L</span>
+				</div>
+				<a href="#">ORDER NOW</a>
+			</div>	
+		</div>
+	</div>
+</div>	
+</body>
+<html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> The Cafe </title>
+
+	<link rel="shortcut icon" type="image/png" href="Photos/THE CAFE ICON.png">
+	<style>
+
+		
+		*{
+			margin: 0;
+			padding: 0;
+			font-family: AXIS;
+		}
+		
+		body{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			min-height: 100vh;
+			background: #131313;
+		}
+
+		.container{
+			position: relative;
+		}
+
+		.container .card{
+			position: relative;
+			width: 320px;
+			height: 450px;
+			background: #ffe8d1;
+			border-radius: 20px;
+			overflow: hidden;
+		}
+
+		.container .card:before{
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0	;
+			width: 100%;
+			height:  100%;
+			background: #3a1711;
+			clip-path: circle(150px at 80% 20%);
+			transition: 0.5s ease-in-out;
+		}
+
+		.container .card:hover:before{
+			clip-path: circle(300px at 80% -20%);
+		}
+
+		.container .card:after{
+			content: 'COFFEE';
+			position: absolute;
+			top: 30%;
+			left: -20%;
+			font-size: 12em;
+			font-weight: 800;
+			font-style: italic;
+			color: rgba(58,23,17,0.04);
+		}
+
+		.container .card .imgBx{
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			z-index: 10000;
+			width: 100%;
+			height: 220px;
+			transition: 0.5s;
+		}
+
+		.container .card:hover .imgBx{
+			top: 0%;
+			transform: translateY(0%);
+		}
+
+		.container	.card .imgBx img{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%) rotate(0deg);
+			width: 200px;
+		}
+
+		.container .card .contentBx{
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			height: 100px;
+			text-align: center;
+			transition: 1s;
+			z-index: 10;
+		}
+
+		.container .card:hover .contentBx{
+			height: 210px;
+		}
+
+		.container .card .contentBx h2{
+			position: relative;
+			font-weight: 600;
+			letter-spacing: 1px;
+			color: #3a1711;
+		}
+
+		.container .card .contentBx .size{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding: 8px 20px;
+			transition: 0.5s;
+			opacity: 0;
+			visibility: hidden;
+		}
+
+		.container .card:hover .contentBx .size{
+			opacity: 1;
+			visibility: visible;
+			transition-delay: 0.5s;
+		}
+
+		.container .card:hover .contentBx .color{
+			opacity: 1;
+			visibility: visible;
+			transition-delay: 0.6s;
+		}
+
+		.container .card .contentBx .size h3{
+			color: #3a1711;
+			font-weight: 300;
+			font-size: 14px;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+			margin-right: 10px;
+		}
+
+		.container .card .contentBx .size span{
+			width: 26px;
+			height:  26px;
+			text-align: center;
+			line-height: 26px;
+			font-size: 14px;
+			display: inline-block;
+			color: #fff;
+			background: #3a1711;
+			margin: 0 5px;
+			transition: 0.5s;
+			color: #fff;
+			border-radius: 4px;
+			cursor: pointer;
+		}
+
+		.container .card .contentBx .size span:hover{
+			background: #fff;
+			color: #3a1711;
+		}
+
+		.container .card .contentBx .color{
+			display: grid;
+			justify-content: center;
+			align-items: center;
+			grid-template-columns: 1fr 1fr;
+			grid-gap: 1em;
+			padding: 8px 80px;
+			transition: 0.5s;
+			opacity: 0;
+			visibility: hidden;
+		}
+
+		.container .card .contentBx .color span{
+			width: 120px;
+			height: 25px;
+			background: #ddb690;
+			border-radius: 8%;
+			cursor: pointer;
+			font-size: 12px;
+			color: #fff;
+			text-align: center;
+			margin: 0 5px;
+			line-height: 24px;
+		}
+
+		.container .card .contentBx .color span:nth-child(2){
+			background: #a97c4e;
+		}
+
+		.container .card .contentBx .color span:nth-child(3){
+			background: #492f15;
+		}
+
+		.container .card .contentBx .color span:nth-child(4){
+			background: #8e4b07;
+		}
+
+		.container .card .contentBx a{
+			display: inline-block;
+			padding: 10px 20px;
+			background: #fff;
+			border-radius: 4px;
+			margin-top: 5px;
+			text-decoration: none;
+			font-weight: 600;
+			color: #3a1711;
+			opacity: 0;
+			transform: translateY(50px);
+			transition: 0.5s;
+		}
+
+		.container .card:hover .contentBx a{
+			opacity: 1;
+			transform: translateY(0px);
+			transition-delay: 0.75s;
+		}
+
+
+	</style>
+</head>
+
+
+<body>		
+	<div class="container">
+		<div class="card">
+			<div class="imgBx">
+				<img src="Photos/CUP OF COFFEE PNG 2.png">
+			</div>
+			<div class="contentBx">
+				<h2>COFFEE</h2>
+				<div class="size">
+					<h3>SIZE : </h3>
+					<span>S</span>
+					<span>M</span>
+					<span>L</span>
+				</div>
+				<div class="color">
+					<span>LIGHT ROAST</span>
+					<span>MEDIUM ROAST</span>
+					<span>DARK ROAST</span>
+					<span>CORTADO</span>
+				</div>	
+				<a href="#">ORDER NOW</a>
+			</div>	
+		</div>
+</div>	
+</body>
+<html>
